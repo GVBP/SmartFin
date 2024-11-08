@@ -6,6 +6,7 @@
 - [ESLint](https://eslint.org/) (v8)
 - [Tailwind CSS](https://tailwindcss.com/) (v3.4.1)
 - [Prettier](https://prettier.io/) (Code formatter)
+- [Shadcn](https://ui.shadcn.com/) (v2.1.3) - Component library
 
 - [App Router](https://nextjs.org/docs/app)
 
@@ -19,6 +20,11 @@
 ```log
 ├── .next (gitignore)
 ├── app
+│   ├── _components
+│   │   ├── ui
+│   │   │   ├── button.tsx
+│   ├── _lib
+│   │   ├── utils.ts (shadcn)
 │   ├── fonts
 │   ├── favicon.ico
 │   ├── globals.css
@@ -37,6 +43,7 @@
 ├── .eslintrc.json
 ├── .gitignore
 ├── .prettierrc.json
+├── components.json (shadcn)
 ├── next-env.d.ts (gitignore)
 ├── next.config.mjs
 ├── package-lock.json
@@ -170,4 +177,23 @@ $ npm install -D prettier prettier-plugin-tailwindcss
 {
   "plugins": ["prettier-plugin-tailwindcss"]
 }
+```
+
+## Shadcn
+
+```bash
+$ npx shadcn@2.1.3 init
+```
+
+```bash
+(y)
+style? Default
+base color? Neutra
+CSS variables? yes
+```
+
+### Add Button Component
+
+```bash
+$ npx shadcn@2.1.3 add button
 ```
