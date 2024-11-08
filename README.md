@@ -15,7 +15,7 @@
 - [Prisma](https://www.prisma.io/) (v5.21.1) - Database Queries (ORM - Object Relational Mapper) (Others - Drizzle)
 - [Postgresql](https://www.postgresql.org/) (v16) - Relational Database
 - [NeonDB](https://neon.tech/) - Cloud Database Service (Others - supabase, vercel)
-- [Clerk](https://clerk.com/) - (Authentication and User Management) (Others - NextAuth.js)
+- [Clerk](https://clerk.com/) (v5.7.5) - (Authentication and User Management) (Others - NextAuth.js)
 
 - [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/) - It provides an easy set of rules for creating an explicit commit history
 
@@ -215,6 +215,7 @@ $ npm install @clerk/nextjs@5.7.5
 2. Set your environment variables (.env.local):
 
 > NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+
 > CLERK_SECRET_KEY
 
 3. Update middleware.ts
