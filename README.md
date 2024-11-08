@@ -16,6 +16,7 @@
 - [Postgresql](https://www.postgresql.org/) (v16) - Relational Database
 - [NeonDB](https://neon.tech/) - Cloud Database Service (Others - supabase, vercel)
 - [Clerk](https://clerk.com/) (v5.7.5) - (Authentication and User Management) (Others - NextAuth.js)
+- [Docker](https://docs.docker.com/compose/)
 
 - [Husky](https://www.npmjs.com/package/husky) (v9.1.6) - ([Git Hooks](https://git-scm.com/book/ms/v2/Customizing-Git-Git-Hooks))
 - [lint-staged](https://www.npmjs.com/package/lint-staged/v/12.3.2) (v12.3.2)
@@ -55,6 +56,7 @@
 ├── .lintstagedrc.json
 ├── .prettierrc.json
 ├── components.json (shadcn)
+├── docker-compose.yml
 ├── middleware.ts (clerk)
 ├── next-env.d.ts (gitignore)
 ├── next.config.mjs
@@ -265,4 +267,24 @@ $ npx husky init
 
 ```bash
 $ npx husky add .husky/commit-msg ".git/hooks/commit-msg \$1"
+```
+
+## Docker (Optional)
+
+1. Create docker-compose.yml
+
+2. Docker Up
+
+```bash
+$ docker-compose up -d
+```
+
+3. Migrate (Development) or (Production)
+
+```bash
+$ npx prisma migrate dev
+```
+
+```bash
+$ npx prisma migrate deploy
 ```
