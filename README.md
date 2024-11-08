@@ -17,9 +17,15 @@
 - [NeonDB](https://neon.tech/) - Cloud Database Service (Others - supabase, vercel)
 - [Clerk](https://clerk.com/) (v5.7.5) - (Authentication and User Management) (Others - NextAuth.js)
 
+- [Husky](https://www.npmjs.com/package/husky) (v9.1.6) - ([Git Hooks](https://git-scm.com/book/ms/v2/Customizing-Git-Git-Hooks))
+- [lint-staged](https://www.npmjs.com/package/lint-staged/v/12.3.2) (v12.3.2)
+
 - [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/) - It provides an easy set of rules for creating an explicit commit history
 
 ```log
+├── .husky
+│   ├── _
+│   ├── pre-commit
 ├── .next (gitignore)
 ├── app
 │   ├── _components
@@ -44,6 +50,7 @@
 ├── .env (gitignore)
 ├── .eslintrc.json
 ├── .gitignore
+├── .lintstagedrc.json
 ├── .prettierrc.json
 ├── components.json (shadcn)
 ├── middleware.ts (clerk)
@@ -228,4 +235,22 @@ $ npm install @clerk/nextjs@5.7.5
 
 ```bash
 $ npm install @clerk/themes@2.1.37
+```
+
+## Husky and lint-staged
+
+Install (Dev):
+
+```bash
+$ npm install -D husky@9.1.6
+```
+
+```bash
+$ npm install -D lint-staged@12.3.2
+```
+
+1. Husky init
+
+```bash
+$ npx husky init
 ```
