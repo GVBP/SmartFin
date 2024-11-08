@@ -17,6 +17,7 @@
 - (Conventional Commits 1.0.0)[https://www.conventionalcommits.org/en/v1.0.0/] - It provides an easy set of rules for creating an explicit commit history
 
 ```log
+├── .next (gitignore)
 ├── app
 │   ├── fonts
 │   ├── favicon.ico
@@ -26,16 +27,17 @@
 ├── docs
 │   ├── Database
 │   │   ├── App Representation: Financial Transactions Database.png
-├── node_modules
+├── node_modules (gitignore)
 ├── prisma
 │   ├── 20241107030807_init_db
 │   │   ├── migration.sql
 │   ├── migration_lock.toml
 │   ├── schema.prisma (Define: Financial Transactions Database)
-├── .env
+├── .env (gitignore)
 ├── .eslintrc.json
 ├── .gitignore
-├── next-env.d.ts
+├── .prettierrc.json
+├── next-env.d.ts (gitignore)
 ├── next.config.mjs
 ├── package-lock.json
 ├── package.json
