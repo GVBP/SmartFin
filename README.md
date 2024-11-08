@@ -9,11 +9,13 @@
 - [Shadcn](https://ui.shadcn.com/) (v2.1.3) - Component library
 
 - [App Router](https://nextjs.org/docs/app)
+- [Middleware](https://nextjs.org/docs/app/building-your-application/routing/middleware)
 
 - [Eraser](https://www.eraser.io/) - Bank Modeling
 - [Prisma](https://www.prisma.io/) (v5.21.1) - Database Queries (ORM - Object Relational Mapper) (Others - Drizzle)
 - [Postgresql](https://www.postgresql.org/) (v16) - Relational Database
 - [NeonDB](https://neon.tech/) - Cloud Database Service (Others - supabase, vercel)
+- [Clerk](https://clerk.com/) - (Authentication and User Management) (Others - NextAuth.js)
 
 - [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/) - It provides an easy set of rules for creating an explicit commit history
 
@@ -44,6 +46,7 @@
 ├── .gitignore
 ├── .prettierrc.json
 ├── components.json (shadcn)
+├── middleware.ts (clerk)
 ├── next-env.d.ts (gitignore)
 ├── next.config.mjs
 ├── package-lock.json
@@ -197,4 +200,31 @@ CSS variables? yes
 
 ```bash
 $ npx shadcn@2.1.3 add button
+```
+
+## Clerk
+
+create an account on the website: https://clerk.com/
+
+1. Install @clerk/nextjs:
+
+```bash
+$ npm install @clerk/nextjs@5.7.5
+```
+
+2. Set your environment variables (.env.local):
+
+> NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+> CLERK_SECRET_KEY
+
+3. Update middleware.ts
+
+4. Add ClerkProvider to your app
+
+### Clerk Themes
+
+1. Install @clerk/themes:
+
+```bash
+$ npm install @clerk/themes@2.1.37
 ```
