@@ -61,6 +61,7 @@ Extensions:
 - Tailwind CSS IntelliSense
 - Prettier - Code formatter (settings > default formatter > select prettier | settings > format on save > check box - true)
 - ESLint
+- Simple React Snippets
 
 ## Getting Started
 
