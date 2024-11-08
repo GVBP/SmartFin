@@ -1,19 +1,20 @@
 #Smartfin - Steps
 
-(NextJS)[https://nextjs.org/] (v14.2.16)
-(NodeJS)[https://nodejs.org/pt] (v20.17.0)
-(TypeScript)[https://www.typescriptlang.org/] (v5)
-(ESLint)[https://eslint.org/] (v8)
-(Tailwind CSS)[https://tailwindcss.com/] (v3.4.1)
+- (NextJS)[https://nextjs.org/] (v14.2.16)
+- (NodeJS)[https://nodejs.org/pt] (v20.17.0)
+- (TypeScript)[https://www.typescriptlang.org/] (v5)
+- (ESLint)[https://eslint.org/] (v8)
+- (Tailwind CSS)[https://tailwindcss.com/] (v3.4.1)
+- (Prettier)[https://prettier.io/] (Code formatter)
 
-(App Router)[https://nextjs.org/docs/app]
+- (App Router)[https://nextjs.org/docs/app]
 
-(Eraser)[https://www.eraser.io/] - Bank Modeling
-(Prisma)[https://www.prisma.io/] (v5.21.1) - Database Queries (ORM - Object Relational Mapper) (Others - Drizzle)
-(Postgresql)[https://www.postgresql.org/] (v16) - Relational Database
-(NeonDB)[https://neon.tech/] - Cloud Database Service (Others - supabase, vercel)
+- (Eraser)[https://www.eraser.io/] - Bank Modeling
+- (Prisma)[https://www.prisma.io/] (v5.21.1) - Database Queries (ORM - Object Relational Mapper) (Others - Drizzle)
+- (Postgresql)[https://www.postgresql.org/] (v16) - Relational Database
+- (NeonDB)[https://neon.tech/] - Cloud Database Service (Others - supabase, vercel)
 
-(Conventional Commits 1.0.0)[https://www.conventionalcommits.org/en/v1.0.0/] - It provides an easy set of rules for creating an explicit commit history
+- (Conventional Commits 1.0.0)[https://www.conventionalcommits.org/en/v1.0.0/] - It provides an easy set of rules for creating an explicit commit history
 
 ```log
 ├── app
@@ -43,6 +44,14 @@
 ├── tailwind.config.ts
 ├── tsconfig.json
 ```
+
+## VSCode
+
+Extensions:
+
+- Tailwind CSS IntelliSense
+- Prettier - Code formatter (settings > default formatter > select prettier | settings > format on save > check box - true)
+- ESLint
 
 ## Getting Started
 
@@ -147,4 +156,16 @@ $ npx prisma init
 
 ```bash
 $ npx prisma migrate dev --name init_db
+```
+
+## Plugin Prettier
+
+```bash
+$ npm install -D prettier prettier-plugin-tailwindcss
+```
+
+```bash .prettierrc.json
+{
+  "plugins": ["prettier-plugin-tailwindcss"]
+}
 ```
