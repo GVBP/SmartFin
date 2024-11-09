@@ -16,6 +16,16 @@ export const TRANSACTION_CATEGORY_LABELS = {
   UTILITY: "UTILIDADES",
 };
 
+export const TRANSACTION_PAYMENT_METHOD_LABELS = {
+  BANK_TRANSFER: "TRANSFERÊNCIA BANCÁRIA",
+  BANK_SLIP: "BOLETO BANCÁRIO",
+  CASH: "DINHEIRO",
+  CREDIT_CARD: "CARTÃO DE CRÉDITO",
+  DEBIT_CARD: "CARTÃO DE DÉBITO",
+  OTHER: "OUTROS",
+  PIX: "PIX",
+};
+
 export const transactionColumns: ColumnDef<Transaction>[] = [
   {
     accessorKey: "name",
@@ -37,6 +47,8 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
   {
     accessorKey: "paymentMethod",
     header: "Método de Pagamento",
+    cell: ({ row: { original: transaction } }) =>
+      TRANSACTION_PAYMENT_METHOD_LABELS[transaction.paymentMethod],
   },
   {
     accessorKey: "date",
