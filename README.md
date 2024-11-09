@@ -309,7 +309,7 @@ $ npm install react-number-format@5.4.2
 $ npx shadcn@2.1.3 add select
 ```
 
-9. Input:
+9. Popover and Calendar:
 
 ```bash
 $ npx shadcn@2.1.3 add popover calendar
