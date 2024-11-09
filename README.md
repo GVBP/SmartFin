@@ -33,9 +33,21 @@
 ├── app
 │   ├── _components
 │   │   ├── ui
-│   │   │   ├── button.tsx
+│   │   │   ├── badge.tsx (shadcn)
+│   │   │   ├── button.tsx (shadcn)
+│   │   │   ├── data-table.tsx
+│   │   │   ├── table.tsx (shadcn)
 │   ├── _lib
 │   │   ├── utils.ts (shadcn)
+│   │   ├── prisma.ts
+│   ├── login
+│   │   ├── page.tsx
+│   ├── subscription
+│   │   ├── page.tsx
+│   ├── transactions
+│   │   ├── _columns
+│   │   │   ├── index.tsx
+│   │   ├── page.tsx
 │   ├── fonts
 │   ├── favicon.ico
 │   ├── globals.css
@@ -182,6 +194,20 @@ $ npx prisma init
 $ npx prisma migrate dev --name init_db
 ```
 
+## Prisma Client
+
+```bash
+$ npm install @prisma/client@5.21.1
+```
+
+## Prisma Studio (Optional)
+
+Used for database maintenance and can be used to include new records:
+
+```bash
+$ npx prisma studio
+```
+
 ## Plugin Prettier
 
 ```bash
@@ -207,10 +233,32 @@ base color? Neutra
 CSS variables? yes
 ```
 
-### Add Button Component
+### Add Components
+
+1. Button:
 
 ```bash
 $ npx shadcn@2.1.3 add button
+```
+
+2. Table:
+
+```bash
+$ npx shadcn@2.1.3 add table
+```
+
+```bash
+$ npm install @tanstack/react-table@8.20.5
+```
+
+> Create file data-table.tsx
+
+> Create file index.tsx
+
+3. Badge:
+
+```bash
+$ npx shadcn@2.1.3 add badge
 ```
 
 ## Clerk
