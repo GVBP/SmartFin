@@ -47,6 +47,8 @@
 │   ├── transactions
 │   │   ├── _columns
 │   │   │   ├── index.tsx
+│   │   ├── _components
+│   │   │   ├── type-badge.tsx
 │   │   ├── page.tsx
 │   ├── fonts
 │   ├── favicon.ico
@@ -63,6 +65,7 @@
 │   ├── migration_lock.toml
 │   ├── schema.prisma (Define: Financial Transactions Database)
 ├── .env (gitignore)
+├── .eslintignore
 ├── .eslintrc.json
 ├── .gitignore
 ├── .lintstagedrc.json
