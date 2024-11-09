@@ -8,6 +8,9 @@
 - [Prettier](https://prettier.io/) (Code formatter)
 - [Shadcn](https://ui.shadcn.com/) (v2.1.3) - Component library
 
+  - [React Hook Form](https://react-hook-form.com/) - Best library to create forms in react
+  - [Zod](https://zod.dev/) - Library used to validate the form
+
 - [App Router](https://nextjs.org/docs/app)
 - [Middleware](https://nextjs.org/docs/app/building-your-application/routing/middleware)
 
@@ -35,8 +38,20 @@
 │   │   ├── ui
 │   │   │   ├── badge.tsx (shadcn)
 │   │   │   ├── button.tsx (shadcn)
+│   │   │   ├── calendar.tsx (shadcn)
 │   │   │   ├── data-table.tsx
+│   │   │   ├── date-picker.tsx (shadcn)
+│   │   │   ├── dialog.tsx (shadcn)
+│   │   │   ├── form.tsx (shadcn)
+│   │   │   ├── input.tsx (shadcn)
+│   │   │   ├── label.tsx (shadcn)
+│   │   │   ├── popover.tsx (shadcn)
+│   │   │   ├── select.tsx (shadcn)
 │   │   │   ├── table.tsx (shadcn)
+│   │   ├── add-transaction-button.tsx
+│   │   ├── money-input.tsx
+│   ├── _constants
+│   │   ├── transactions.ts
 │   ├── _lib
 │   │   ├── utils.ts (shadcn)
 │   │   ├── prisma.ts
@@ -262,6 +277,42 @@ $ npm install @tanstack/react-table@8.20.5
 
 ```bash
 $ npx shadcn@2.1.3 add badge
+```
+
+4. Dialog:
+
+```bash
+$ npx shadcn@2.1.3 add dialog
+```
+
+5. Form:
+
+```bash
+$ npx shadcn@2.1.3 add form
+```
+
+6. Input:
+
+```bash
+$ npx shadcn@2.1.3 add input
+```
+
+7. React Number Format:
+
+```bash
+$ npm install react-number-format@5.4.2
+```
+
+8. Input:
+
+```bash
+$ npx shadcn@2.1.3 add select
+```
+
+9. Input:
+
+```bash
+$ npx shadcn@2.1.3 add popover calendar
 ```
 
 ## Clerk
