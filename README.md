@@ -303,7 +303,7 @@ $ npx shadcn@2.1.3 add input
 $ npm install react-number-format@5.4.2
 ```
 
-8. Input:
+8. Select:
 
 ```bash
 $ npx shadcn@2.1.3 add select
