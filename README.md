@@ -52,6 +52,8 @@
 │   │   │   ├── input.tsx (shadcn)
 │   │   │   ├── label.tsx (shadcn)
 │   │   │   ├── popover.tsx (shadcn)
+│   │   │   ├── progress.tsx (shadcn)
+│   │   │   ├── scroll-area.tsx (shadcn)
 │   │   │   ├── select.tsx (shadcn)
 │   │   │   ├── table.tsx (shadcn)
 │   │   ├── add-transaction-button.tsx
@@ -69,6 +71,7 @@
 │   │   ├── prisma.ts
 │   ├── (home)
 │   │   ├── _components
+│   │   │   ├── expenses-per-category.tsx
 │   │   │   ├── percentage-item.tsx
 │   │   │   ├── summary-card.tsx
 │   │   │   ├── summary-cards.tsx
@@ -347,6 +350,12 @@ $ npx shadcn@2.1.3 add card
 
 ```bash
 $ npx shadcn@2.1.3 add chart
+```
+
+12. Progress:
+
+```bash
+$ npx shadcn@2.1.3 add progress
 ```
 
 ## Clerk
