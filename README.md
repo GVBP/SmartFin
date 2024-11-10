@@ -35,7 +35,7 @@
 ├── .next (gitignore)
 ├── app
 │   ├── _actions
-│   │   ├── add-transaction
+│   │   ├── upsert-transaction
 │   │   │   ├── index.ts
 │   │   │   ├── schema.ts
 │   ├── _components
@@ -53,6 +53,7 @@
 │   │   │   ├── select.tsx (shadcn)
 │   │   │   ├── table.tsx (shadcn)
 │   │   ├── add-transaction-button.tsx
+│   │   ├── upsert-transaction-dialog.tsx
 │   │   ├── money-input.tsx
 │   ├── _constants
 │   │   ├── transactions.ts
@@ -67,6 +68,7 @@
 │   │   ├── _columns
 │   │   │   ├── index.tsx
 │   │   ├── _components
+│   │   │   ├── edit-transaction-button.tsx
 │   │   │   ├── type-badge.tsx
 │   │   ├── page.tsx
 │   ├── fonts
