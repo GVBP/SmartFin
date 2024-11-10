@@ -69,9 +69,12 @@
 │   ├── _lib
 │   │   ├── utils.ts (shadcn)
 │   │   ├── prisma.ts
+│   ├── _utils
+│   │   ├── currency.ts
 │   ├── (home)
 │   │   ├── _components
 │   │   │   ├── expenses-per-category.tsx
+│   │   │   ├── last-transactions.tsx
 │   │   │   ├── percentage-item.tsx
 │   │   │   ├── summary-card.tsx
 │   │   │   ├── summary-cards.tsx
@@ -103,7 +106,14 @@
 │   ├── migration_lock.toml
 │   ├── schema.prisma (Define: Financial Transactions Database)
 ├── public
+│   ├── bank-slip.svg
+│   ├── bank-transfer.svg
+│   ├── credit-card.svg
+│   ├── debit-card.svg
 │   ├── logo.png
+│   ├── money.svg
+│   ├── other.svg
+│   ├── pix.svg
 ├── .env (gitignore)
 ├── .eslintignore
 ├── .eslintrc.json
