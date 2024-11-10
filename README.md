@@ -53,8 +53,9 @@
 │   │   │   ├── select.tsx (shadcn)
 │   │   │   ├── table.tsx (shadcn)
 │   │   ├── add-transaction-button.tsx
-│   │   ├── upsert-transaction-dialog.tsx
 │   │   ├── money-input.tsx
+│   │   ├── navbar.tsx
+│   │   ├── upsert-transaction-dialog.tsx
 │   ├── _constants
 │   │   ├── transactions.ts
 │   ├── _lib
@@ -85,6 +86,8 @@
 │   │   ├── migration.sql
 │   ├── migration_lock.toml
 │   ├── schema.prisma (Define: Financial Transactions Database)
+├── public
+│   ├── logo.png
 ├── .env (gitignore)
 ├── .eslintignore
 ├── .eslintrc.json
