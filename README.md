@@ -44,6 +44,7 @@
 │   │   │   ├── button.tsx (shadcn)
 │   │   │   ├── calendar.tsx (shadcn)
 │   │   │   ├── card.tsx (shadcn)
+│   │   │   ├── chart.tsx (shadcn)
 │   │   │   ├── data-table.tsx
 │   │   │   ├── date-picker.tsx (shadcn)
 │   │   │   ├── dialog.tsx (shadcn)
@@ -59,14 +60,20 @@
 │   │   ├── upsert-transaction-dialog.tsx
 │   ├── _constants
 │   │   ├── transactions.ts
+│   ├── _data
+│   │   ├── get-dashboard
+│   │   │   ├── index.ts
+│   │   │   ├── types.ts
 │   ├── _lib
 │   │   ├── utils.ts (shadcn)
 │   │   ├── prisma.ts
 │   ├── (home)
 │   │   ├── _components
+│   │   │   ├── percentage-item.tsx
 │   │   │   ├── summary-card.tsx
 │   │   │   ├── summary-cards.tsx
 │   │   │   ├── time-select.tsx
+│   │   │   ├── transactions-pie-chart.tsx
 │   │   ├── page.tsx (Home Page)
 │   ├── login
 │   │   ├── page.tsx
@@ -334,6 +341,12 @@ $ npx shadcn@2.1.3 add popover calendar
 
 ```bash
 $ npx shadcn@2.1.3 add card
+```
+
+11. Chart:
+
+```bash
+$ npx shadcn@2.1.3 add chart
 ```
 
 ## Clerk
