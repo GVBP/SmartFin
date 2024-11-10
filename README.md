@@ -43,6 +43,7 @@
 │   │   │   ├── badge.tsx (shadcn)
 │   │   │   ├── button.tsx (shadcn)
 │   │   │   ├── calendar.tsx (shadcn)
+│   │   │   ├── card.tsx (shadcn)
 │   │   │   ├── data-table.tsx
 │   │   │   ├── date-picker.tsx (shadcn)
 │   │   │   ├── dialog.tsx (shadcn)
@@ -61,6 +62,12 @@
 │   ├── _lib
 │   │   ├── utils.ts (shadcn)
 │   │   ├── prisma.ts
+│   ├── (home)
+│   │   ├── _components
+│   │   │   ├── summary-card.tsx
+│   │   │   ├── summary-cards.tsx
+│   │   │   ├── time-select.tsx
+│   │   ├── page.tsx (Home Page)
 │   ├── login
 │   │   ├── page.tsx
 │   ├── subscription
@@ -76,7 +83,6 @@
 │   ├── favicon.ico
 │   ├── globals.css
 │   ├── layout.tsx (Main Application Layout) {children}
-│   ├── page.tsx (Home Page)
 ├── docs
 │   ├── Database
 │   │   ├── App Representation: Financial Transactions Database.png
@@ -322,6 +328,12 @@ $ npx shadcn@2.1.3 add select
 
 ```bash
 $ npx shadcn@2.1.3 add popover calendar
+```
+
+10. Card:
+
+```bash
+$ npx shadcn@2.1.3 add card
 ```
 
 ## Clerk
