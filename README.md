@@ -34,6 +34,10 @@
 │   ├── pre-commit
 ├── .next (gitignore)
 ├── app
+│   ├── _actions
+│   │   ├── add-transaction
+│   │   │   ├── index.ts
+│   │   │   ├── schema.ts
 │   ├── _components
 │   │   ├── ui
 │   │   │   ├── badge.tsx (shadcn)
