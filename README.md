@@ -57,6 +57,7 @@
 │   │   │   ├── scroll-area.tsx (shadcn)
 │   │   │   ├── select.tsx (shadcn)
 │   │   │   ├── table.tsx (shadcn)
+│   │   │   ├── tooltip.tsx (shadcn)
 │   │   ├── add-transaction-button.tsx
 │   │   ├── money-input.tsx
 │   │   ├── navbar.tsx
@@ -64,6 +65,10 @@
 │   ├── _constants
 │   │   ├── transactions.ts
 │   ├── _data
+│   │   ├── can-user-add-transaction
+│   │   │   ├── index.ts
+│   │   ├── get-current-month-transactions
+│   │   │   ├── index.ts
 │   │   ├── get-dashboard
 │   │   │   ├── index.ts
 │   │   │   ├── types.ts
@@ -378,6 +383,12 @@ $ npx shadcn@2.1.3 add chart
 $ npx shadcn@2.1.3 add progress
 ```
 
+13. Tooltip:
+
+```bash
+$ npx shadcn@2.1.3 add tooltip
+```
+
 ## Clerk
 
 create an account on the website: https://clerk.com/
@@ -497,3 +508,5 @@ $ stripe listen --forward-to localhost:3000/api/webhooks/stripe
 > STRIPE_WEBHOOK_SECRET
 
 > NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL
+
+59:30 - 1:13:30
