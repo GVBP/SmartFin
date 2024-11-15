@@ -21,6 +21,7 @@
 - [Clerk](https://clerk.com/) (v5.7.5) - (Authentication and User Management) (Others - NextAuth.js)
 - [Stripe](https://stripe.com/br) - (Receive payments online)
 - [Docker](https://docs.docker.com/compose/)
+- [OpenAI Platform](https://platform.openai.com/docs/overview)
 
 - [Husky](https://www.npmjs.com/package/husky) (v9.1.6) - ([Git Hooks](https://git-scm.com/book/ms/v2/Customizing-Git-Git-Hooks))
 - [lint-staged](https://www.npmjs.com/package/lint-staged/v/12.3.2) (v12.3.2)
@@ -78,7 +79,12 @@
 │   ├── _utils
 │   │   ├── currency.ts
 │   ├── (home)
+│   │   ├── _actions
+│   │   │   ├── generate-ai-report
+│   │   │   │   ├── index.ts
+│   │   │   │   ├── schema.ts
 │   │   ├── _components
+│   │   │   ├── ai-report-button.tsx
 │   │   │   ├── expenses-per-category.tsx
 │   │   │   ├── last-transactions.tsx
 │   │   │   ├── percentage-item.tsx
@@ -509,4 +515,22 @@ $ stripe listen --forward-to localhost:3000/api/webhooks/stripe
 
 > NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL
 
-59:30 - 1:13:30
+## OpenAI
+
+1. Create API keys:
+
+> OPENAI_API_KEY
+
+```bash
+$ npm i openai@4.71.1
+```
+
+### OpenAI Formatting
+
+```bash
+$ npm i react-markdown@9.0.1
+```
+
+```bash
+$ npm i -D @tailwindcss/typography@0.5.15
+```
