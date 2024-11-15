@@ -19,6 +19,7 @@
 - [Postgresql](https://www.postgresql.org/) (v16) - Relational Database
 - [NeonDB](https://neon.tech/) - Cloud Database Service (Others - supabase, vercel)
 - [Clerk](https://clerk.com/) (v5.7.5) - (Authentication and User Management) (Others - NextAuth.js)
+- [Stripe](https://stripe.com/br) - (Receive payments online)
 - [Docker](https://docs.docker.com/compose/)
 
 - [Husky](https://www.npmjs.com/package/husky) (v9.1.6) - ([Git Hooks](https://git-scm.com/book/ms/v2/Customizing-Git-Git-Hooks))
@@ -84,6 +85,11 @@
 │   ├── login
 │   │   ├── page.tsx
 │   ├── subscription
+│   │   ├── _actions
+│   │   │   ├── create-stripe-checkout
+│   │   │   │   ├── index.ts
+│   │   ├── _components
+│   │   │   ├── acquire-plan-button.tsx
 │   │   ├── page.tsx
 │   ├── transactions
 │   │   ├── _columns
@@ -442,4 +448,30 @@ $ npx prisma migrate dev
 
 ```bash
 $ npx prisma migrate deploy
+```
+
+## Stripe
+
+create an account on the website: https://stripe.com/br
+
+1. Set your environment variables (.env.local):
+
+> create and copy product id from Stripe product catalog
+
+> STRIPE_PREMIUM_PLAN_PRODUCT_ID
+
+> STRIPE_PREMIUM_PLAN_PRICE_ID
+
+> NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+
+> STRIPE_SECRET_KEY
+
+2. Install Stripe:
+
+```bash
+$ npm install stripe@17.3.1
+```
+
+```bash
+$ npm install @stripe/stripe-js@4.9.0
 ```
