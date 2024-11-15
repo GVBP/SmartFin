@@ -82,6 +82,10 @@
 │   │   │   ├── time-select.tsx
 │   │   │   ├── transactions-pie-chart.tsx
 │   │   ├── page.tsx (Home Page)
+│   ├── api
+│   │   ├── webhooks
+│   │   │   ├── stripe
+│   │   │   │   ├── route.ts
 │   ├── login
 │   │   ├── page.tsx
 │   ├── subscription
@@ -475,3 +479,21 @@ $ npm install stripe@17.3.1
 ```bash
 $ npm install @stripe/stripe-js@4.9.0
 ```
+
+3. Web Hooks (Stripe - Event destinations):
+
+3.1. [Download the Stripe CLI](https://stripe.com/docs/stripe-cli#install) and log in with your Stripe account:
+
+```bash
+$ stripe login
+```
+
+3.2. Route events to their destination:
+
+```bash
+$ stripe listen --forward-to localhost:3000/api/webhooks/stripe
+```
+
+> STRIPE_WEBHOOK_SECRET
+
+> NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL
