@@ -22,6 +22,7 @@
 - [Stripe](https://stripe.com/br) - (Receive payments online)
 - [Docker](https://docs.docker.com/compose/)
 - [OpenAI Platform](https://platform.openai.com/docs/overview)
+- [Vercel](https://vercel.com) - Deploy
 
 - [Husky](https://www.npmjs.com/package/husky) (v9.1.6) - ([Git Hooks](https://git-scm.com/book/ms/v2/Customizing-Git-Git-Hooks))
 - [lint-staged](https://www.npmjs.com/package/lint-staged/v/12.3.2) (v12.3.2)
@@ -534,3 +535,29 @@ $ npm i react-markdown@9.0.1
 ```bash
 $ npm i -D @tailwindcss/typography@0.5.15
 ```
+
+## Vercel
+
+1. Add new project
+
+2. Build local:
+
+```bash
+$ npm run build
+```
+
+```bash
+$ npm run start
+```
+
+```bash
+$ npx prisma migrate deploy
+```
+
+3. New Project
+
+Adjust:
+
+> DATABASE_URL
+
+> STRIPE_WEBHOOK_SECRET (Web Hooks - Stripe - Event destinations)
