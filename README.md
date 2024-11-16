@@ -43,6 +43,7 @@
 │   │   │   ├── schema.ts
 │   ├── _components
 │   │   ├── ui
+│   │   │   ├── alert-dialog.tsx (shadcn)
 │   │   │   ├── badge.tsx (shadcn)
 │   │   │   ├── button.tsx (shadcn)
 │   │   │   ├── calendar.tsx (shadcn)
@@ -58,6 +59,7 @@
 │   │   │   ├── progress.tsx (shadcn)
 │   │   │   ├── scroll-area.tsx (shadcn)
 │   │   │   ├── select.tsx (shadcn)
+│   │   │   ├── sonner.tsx (shadcn)
 │   │   │   ├── table.tsx (shadcn)
 │   │   │   ├── tooltip.tsx (shadcn)
 │   │   ├── add-transaction-button.tsx
@@ -108,9 +110,14 @@
 │   │   │   ├── acquire-plan-button.tsx
 │   │   ├── page.tsx
 │   ├── transactions
+│   │   ├── _actions
+│   │   │   ├── delete-transaction
+│   │   │   │   ├── index.ts
+│   │   │   │   ├── schema.ts
 │   │   ├── _columns
 │   │   │   ├── index.tsx
 │   │   ├── _components
+│   │   │   ├── delete-transaction-button.tsx
 │   │   │   ├── edit-transaction-button.tsx
 │   │   │   ├── type-badge.tsx
 │   │   ├── page.tsx
@@ -394,6 +401,18 @@ $ npx shadcn@2.1.3 add progress
 
 ```bash
 $ npx shadcn@2.1.3 add tooltip
+```
+
+14. Alert Dialog:
+
+```bash
+$ npx shadcn@2.1.3 add alert-dialog
+```
+
+14. Sonner:
+
+```bash
+$ npx shadcn@2.1.3 add sonner
 ```
 
 ## Clerk
