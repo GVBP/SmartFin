@@ -1,7 +1,7 @@
 "use client";
 
 import { UserButton } from "@clerk/nextjs";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -11,7 +11,8 @@ const Navbar = () => {
     <nav className="flex justify-between border-b border-solid px-8 py-4">
       {/* LEFT */}
       <div className="flex items-center gap-10">
-        <Image src="/logo.png" width={175} height={40} alt="SmartFin" />
+        {/* <Image src="/logo.png" width={175} height={40} alt="SmartFin" /> */}
+        <h1 className="text-2xl font-bold text-orange-400">SmartFin</h1>
         <Link
           href="/"
           className={
