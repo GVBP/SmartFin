@@ -6,6 +6,7 @@ interface SummaryCardProps {
   icon: ReactNode;
   title: string;
   amount: number;
+  amountTextColor?: string;
   size?: "small" | "large";
   userCanAddTransaction?: boolean;
 }
@@ -14,22 +15,23 @@ const SummaryCard = ({
   icon,
   title,
   amount,
+  amountTextColor,
   size = "small",
   userCanAddTransaction,
 }: SummaryCardProps) => {
   return (
     <Card>
-      <CardHeader className="flex-row items-center gap-4">
+      <CardHeader className="flex-row items-baseline gap-4">
         {icon}
         <p
-          className={`${size === "small" ? "text-muted-foreground" : "text-white opacity-70"}`}
+          className={`${size === "small" ? "text-muted-foreground" : "opacity-70"}`}
         >
           {title}
         </p>
       </CardHeader>
       <CardContent className="flex justify-between">
         <p
-          className={`font-bold ${size === "small" ? "text-2xl" : "text-4xl"}`}
+          className={`font-bold ${size === "small" ? "text-2xl" : "text-4xl"} ${amountTextColor}`}
         >
           {Intl.NumberFormat("pt-BR", {
             style: "currency",
