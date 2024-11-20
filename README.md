@@ -32,11 +32,15 @@
 - [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/) - It provides an easy set of rules for creating an explicit commit history
 
 ```log
+├── .github
+│   ├── .workflows
+│   │   ├── production.yaml
 ├── .husky
 │   ├── _
 │   ├── commit-msg
 │   ├── pre-commit
 ├── .next (gitignore)
+├── .vercel (gitignore)
 ├── app
 │   ├── _actions
 │   │   ├── upsert-transaction
@@ -162,6 +166,7 @@
 ├── README.md
 ├── tailwind.config.ts
 ├── tsconfig.json
+├── vercel.json
 ```
 
 ## VSCode
@@ -643,3 +648,9 @@ $ Automatically clear? yes
 ```bash
 $ npm run test
 ```
+
+## Deployment
+
+1. [GitHub Actions](https://github.com/actions)
+
+2. [Deployment Vercel](https://vercel.com/guides/can-you-deploy-based-on-tags-releases-on-vercel#versioned-deployment)
