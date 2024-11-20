@@ -164,6 +164,7 @@
 ├── package.json
 ├── postcss.config.mjs
 ├── README.md
+├── sonar-project.properties
 ├── tailwind.config.ts
 ├── tsconfig.json
 ├── vercel.json
