@@ -583,6 +583,20 @@ Adjust:
 
 > STRIPE_WEBHOOK_SECRET (Web Hooks - Stripe - Event destinations)
 
+4. Installing Vercel CLI (Optional)
+
+```bash
+$ npm i -g vercel
+```
+
+```bash
+$ npm i -g vercel@latest
+```
+
+```bash
+$ vercel --version
+```
+
 ## Jest
 
 1. To set up Jest, install jest and the following packages as dev dependencies:
