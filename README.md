@@ -23,6 +23,7 @@
 - [Docker](https://docs.docker.com/compose/)
 - [OpenAI Platform](https://platform.openai.com/docs/overview)
 - [Vercel](https://vercel.com) - Deploy
+- [SonarQube](https://docs.sonarsource.com/sonarqube/latest/try-out-sonarqube/)
 
 - [Husky](https://www.npmjs.com/package/husky) (v9.1.6) - ([Git Hooks](https://git-scm.com/book/ms/v2/Customizing-Git-Git-Hooks))
 - [lint-staged](https://www.npmjs.com/package/lint-staged/v/12.3.2) (v12.3.2)
