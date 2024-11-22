@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky && prisma generate"
+    "prepare": "husky && prisma generate",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@clerk/nextjs": "^5.7.5",
@@ -51,6 +52,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "cypress": "^13.16.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.15",
     "husky": "^9.1.6",
