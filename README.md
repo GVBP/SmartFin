@@ -28,7 +28,6 @@
 - [Husky](https://www.npmjs.com/package/husky) (v9.1.6) - ([Git Hooks](https://git-scm.com/book/ms/v2/Customizing-Git-Git-Hooks))
 - [lint-staged](https://www.npmjs.com/package/lint-staged/v/12.3.2) (v12.3.2)
 - [git-commit-msg-linter](https://www.npmjs.com/package/git-commit-msg-linter) (v5.0.8) (Conventional Commits 1.0.0)
-- [Jest](https://jestjs.io/docs/getting-started)
 
 - [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/) - It provides an easy set of rules for creating an explicit commit history
 
@@ -157,7 +156,6 @@
 ├── .prettierrc.json
 ├── components.json (shadcn)
 ├── docker-compose.yml
-├── jest.config.ts
 ├── middleware.ts (clerk)
 ├── next-env.d.ts (gitignore)
 ├── next.config.mjs
@@ -602,53 +600,6 @@ $ npm i -g vercel@latest
 
 ```bash
 $ vercel --version
-```
-
-## Jest
-
-1. To set up Jest, install jest and the following packages as dev dependencies:
-
-```bash
-$ npm install -D jest jest-environment-jsdom @testing-library/react @testing-library/dom @testing-library/jest-dom ts-node
-```
-
-2. Generate a basic Jest configuration file by running the following command:
-
-```bash
-$ npm init jest@latest
-```
-
-2.1. Init jest
-
-```bash
-$ use Jest in package.json? yes
-$ use Typescript config file? yes
-$ Choose environment testing > node
-$ Coverage reports? yes
-$ Provider for coverage? v8
-$ Automatically clear? yes
-```
-
-3. Update a jest.config.ts file to use next/jest.
-
-4. Add a test script to package.json
-
-```json
-{
-  "scripts": {
-    //..
-    "test": "jest",
-    "test:watch": "jest --watch"
-  }
-}
-```
-
-5. Create the first test
-
-6. Running the tests:
-
-```bash
-$ npm run test
 ```
 
 ## Deployment
