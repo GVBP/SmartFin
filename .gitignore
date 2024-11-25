@@ -40,3 +40,6 @@ next-env.d.ts
 
 #others
 .swc
+
+#cypress
+cypress.env.json
