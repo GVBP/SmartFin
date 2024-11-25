@@ -19,17 +19,17 @@ jobs:
       - run: npm run build
   cypress-run:
     needs: [build]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
+      - name: Cypress tests
+        uses: ./
         with:
           build: npm run build
           start: npm start
+          wait-on: "http://localhost:3000"
+          config: baseUrl=http://localhost:3000
   sonarcloud:
     needs: [build, cypress-run]
     name: SonarQube Cloud
