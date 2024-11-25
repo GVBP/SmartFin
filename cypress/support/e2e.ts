@@ -18,3 +18,18 @@ import "./commands";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+import { addClerkCommands } from "@clerk/testing/cypress";
+
+Cypress.on("uncaught:exception", (err) => {
+  // Ignorar erros relacionados ao redirecionamento do Next.js
+  if (err.message.includes("NEXT_REDIRECT")) {
+    return false; // Evita que o teste falhe
+  }
+
+  // Permite que outros erros continuem falhando
+  return true;
+});
+
+addClerkCommands({ Cypress, cy });
+
+export {};
