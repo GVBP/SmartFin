@@ -17,8 +17,21 @@ jobs:
       - run: npm install
       - run: npm run prepare
       - run: npm run build
-  sonarcloud:
+  cypress-run:
     needs: [build]
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          build: npm run build
+          start: npm start
+  sonarcloud:
+    needs: [build, cypress-run]
     name: SonarQube Cloud
     runs-on: ubuntu-latest
     steps:
@@ -35,7 +48,7 @@ jobs:
             -Dsonar.exclusions="**/node_modules/**,**/*.spec.ts,**/*.cy.ts"
             -Dsonar.test.inclusions="**/testing/**,**/*.spec.ts,**/*.cy.ts"'
   Deploy-Production:
-    needs: [build, sonarcloud]
+    needs: [build, sonarcloud, cypress-run]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

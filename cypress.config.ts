@@ -9,5 +9,6 @@ export default defineConfig({
       return clerkSetup({ config });
     },
     baseUrl: "http://localhost:3000",
+    video: false,
   },
 });
