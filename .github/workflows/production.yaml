@@ -30,6 +30,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          EXTRA_ARGS: '-Dsonar.sources=app
+            -Dsonar.tests=app
+            -Dsonar.test.inclusions="**/testing/**,**/*.spec.ts,**/*.cy.ts"
+            -Dsonar.coverage.exclusions="**/node_modules/**,**/*.spec.ts,**/*.cy.ts"'
   Deploy-Production:
     needs: [build, sonarcloud]
     runs-on: ubuntu-latest
