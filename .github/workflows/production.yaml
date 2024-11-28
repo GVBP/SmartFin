@@ -40,12 +40,13 @@ jobs:
         run: npm i
       - name: Test and coverage
         run: npm run test
+        env:
+          JEST_COVERAGE: ${{ secrets.JEST_COVERAGE }}
       - name: SonarQube Cloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          JEST_COVERAGE: ${{ secrets.JEST_COVERAGE }}
           EXTRA_ARGS: '-Dsonar.sources=app
             -Dsonar.tests=__tests__
             -Dsonar.exclusions="**/node_modules/**,**/*.spec.ts,**/*.cy.ts"
