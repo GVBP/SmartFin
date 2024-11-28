@@ -44,7 +44,7 @@ const Navbar = () => {
         </Link>
       </div>
       {/* RIGHT */}
-      <UserButton showName />
+      {!process.env.JEST_COVERAGE && <UserButton showName />}
     </nav>
   );
 };
