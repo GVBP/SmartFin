@@ -19,12 +19,13 @@ export const generateAiReport = async ({ month }: GenerateAiReportSchema) => {
   if (!hasPremiumPlan) {
     throw new Error("You need a premium plan to generate AI reports");
   }
-  if (!process.env.OPENAI_API_KEY) {
+  if (!process.env.GEMINI_API_KEY) {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     return DUMMY_REPORT;
   }
   const openAi = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
+    apiKey: process.env.GEMINI_API_KEY,
+    baseURL: "https://generativelanguage.googleapis.com/v1beta/openai/",
   });
   // get the transactions of the month received
   const transactions = await db.transaction.findMany({
@@ -44,7 +45,7 @@ export const generateAiReport = async ({ month }: GenerateAiReportSchema) => {
     )
     .join(";")}`;
   const completion = await openAi.chat.completions.create({
-    model: "gpt-4o-mini",
+    model: "gemini-1.5-flash",
     messages: [
       {
         role: "system",
