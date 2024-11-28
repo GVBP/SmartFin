@@ -45,10 +45,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          JEST_COVERAGE: ${{ secrets.JEST_COVERAGE }}
           EXTRA_ARGS: '-Dsonar.sources=app
-            -Dsonar.tests=jest
+            -Dsonar.tests=__tests__
             -Dsonar.exclusions="**/node_modules/**,**/*.spec.ts,**/*.cy.ts"
-            -Dsonar.test.inclusions="**/testing/**,**/*.spec.ts,**/*.cy.ts"'
+            -Dsonar.test.inclusions="**/testing/**,**/*.spec.ts,**/*.test.*,**/*.cy.ts"'
   Deploy-Production:
     needs: [build, sonarcloud, cypress-run]
     runs-on: ubuntu-latest
