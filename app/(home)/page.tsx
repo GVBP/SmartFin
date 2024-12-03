@@ -13,20 +13,23 @@ import AiReportButton from "./_components/ai-report-button";
 
 interface HomeProps {
   searchParams: {
+    year: string;
     month: string;
   };
 }
 
-const Home = async ({ searchParams: { month } }: HomeProps) => {
+const Home = async ({ searchParams: { year, month } }: HomeProps) => {
   const { userId } = await auth();
   if (!userId) {
     redirect("/login");
   }
   const monthIsInvalid = !month || !isMatch(month, "MM");
-  if (monthIsInvalid) {
-    redirect(`?month=${new Date().getMonth() + 1}`);
+  const yearIsInvalid = !year || !isMatch(year, "yyyy");
+  if (monthIsInvalid || yearIsInvalid) {
+    const [year, month] = new Date().toISOString().slice(0, 7).split("-"); // YYYY-MM
+    redirect(`?year=${year}&month=${month}`);
   }
-  const dashboard = await getDashboard(month);
+  const dashboard = await getDashboard(year, month);
   const userCanAddTransaction = await canUserAddTransaction();
   const user = await clerkClient().users.getUser(userId);
   return (
@@ -37,6 +40,7 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
           <h1 className="text-2xl font-bold">Dashboard</h1>
           <div className="flex items-center gap-3">
             <AiReportButton
+              year={year}
               month={month}
               hasPremiumPlan={
                 user.publicMetadata.subscriptionPlan === "premium"
@@ -48,7 +52,6 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
         <div className="grid h-full grid-cols-[2fr,1fr] gap-6 overflow-hidden">
           <div className="flex flex-col gap-6 overflow-hidden">
             <SummaryCards
-              month={month}
               {...dashboard}
               userCanAddTransaction={userCanAddTransaction}
             />

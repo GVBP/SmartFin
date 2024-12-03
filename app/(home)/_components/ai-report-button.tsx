@@ -19,17 +19,23 @@ import Markdown from "react-markdown";
 import Link from "next/link";
 
 interface AiReportButtonProps {
-  hasPremiumPlan: boolean;
+  year: string;
   month: string;
+  hasPremiumPlan: boolean;
 }
 
-const AiReportButton = ({ month, hasPremiumPlan }: AiReportButtonProps) => {
+const AiReportButton = ({
+  year,
+  month,
+  hasPremiumPlan,
+}: AiReportButtonProps) => {
   const [report, setReport] = useState<string | null>(null);
   const [reportIsLoading, setReportIsLoading] = useState(false);
   const handleGenerateReportClick = async () => {
     try {
       setReportIsLoading(true);
-      const aiReport = await generateAiReport({ month });
+      console.log("year: " + year);
+      const aiReport = await generateAiReport({ year, month });
       console.log({ aiReport });
       setReport(aiReport);
     } catch (error) {
