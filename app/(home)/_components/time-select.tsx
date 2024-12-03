@@ -9,11 +9,10 @@ const TimeDatePicker = () => {
   const [date, setDate] = React.useState<Date>();
   const { push } = useRouter();
   const searchParams = useSearchParams();
-  let year = searchParams.get("year");
-  let month = searchParams.get("month");
-
-  if (year == null || month == null)
-    [year, month] = new Date().toISOString().slice(0, 7).split("-"); // YYYY-MM
+  const year = searchParams.get("year");
+  const month = searchParams.get("month");
+  const parsedYear = year ? parseInt(year, 10) : new Date().getFullYear();
+  const parsedMonth = month ? parseInt(month, 10) - 1 : new Date().getMonth();
 
   const handleMonthChange = (pMonth: Date) => {
     const [year, month] = pMonth.toISOString().slice(0, 7).split("-"); // YYYY-MM
@@ -31,6 +30,7 @@ const TimeDatePicker = () => {
       className="h-[50px] w-auto"
       onMonthChange={handleMonthChange}
       locale={ptBR}
+      defaultMonth={new Date(parsedYear, parsedMonth)}
     />
   );
 };
