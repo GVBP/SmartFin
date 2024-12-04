@@ -41,6 +41,7 @@ import {
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { upsertTransaction } from "../_actions/upsert-transaction";
+import { useState } from "react";
 
 interface UpsertTransactionDialogProps {
   isOpen: boolean;
@@ -98,7 +99,16 @@ const UpsertTransactionDialog = ({
     try {
       await upsertTransaction({ ...data, id: transactionId });
       setIsOpen(false);
-      form.reset();
+      form.reset(
+        defaultValues ?? {
+          amount: 0,
+          category: TransactionCategory.OTHER,
+          date: new Date(),
+          name: "",
+          paymentMethod: TransactionPaymentMethod.CASH,
+          type: TransactionType.EXPENSE,
+        },
+      );
     } catch (error) {
       console.error(error);
     }
@@ -106,13 +116,48 @@ const UpsertTransactionDialog = ({
 
   const isUpdate = Boolean(transactionId);
 
+  const getTransactionCategoryOptions = (typeOptions: string) => {
+    let returnOptions;
+    if (typeOptions === "DEPOSIT") {
+      returnOptions = TRANSACTION_CATEGORY_OPTIONS.filter(
+        (option) =>
+          option.value === TransactionCategory.SALARY ||
+          option.value === TransactionCategory.OTHER,
+      );
+    } else if (typeOptions === "INVESTIMENT") {
+      returnOptions = TRANSACTION_CATEGORY_OPTIONS.filter(
+        (option) => option.value === TransactionCategory.OTHER,
+      );
+    } else {
+      returnOptions = TRANSACTION_CATEGORY_OPTIONS.filter(
+        (option) => option.value !== TransactionCategory.SALARY,
+      );
+    }
+    return returnOptions;
+  };
+  const [selectedCategory, setSelectedCategory] = useState(
+    defaultValues?.category ?? "OTHER",
+  );
+  const [categoryItens, setCategoryItens] = useState(
+    getTransactionCategoryOptions(defaultValues?.type ?? "EXPENSE"),
+  );
+
   return (
     <Dialog
       open={isOpen}
       onOpenChange={(open) => {
         setIsOpen(open);
         if (!open) {
-          form.reset();
+          form.reset(
+            defaultValues ?? {
+              amount: 0,
+              category: TransactionCategory.OTHER,
+              date: new Date(),
+              name: "",
+              paymentMethod: TransactionPaymentMethod.CASH,
+              type: TransactionType.EXPENSE,
+            },
+          );
         }
       }}
     >
@@ -168,12 +213,27 @@ const UpsertTransactionDialog = ({
                 <FormItem>
                   <FormLabel>Tipo</FormLabel>
                   <Select
-                    onValueChange={field.onChange}
+                    onValueChange={(value) => {
+                      field.onChange(value);
+                      const retornoOptions =
+                        getTransactionCategoryOptions(value);
+                      setCategoryItens(retornoOptions);
+
+                      // Reseta a categoria se ela não for compatível
+                      if (
+                        selectedCategory &&
+                        !categoryItens.find(
+                          (option) => option.value === selectedCategory,
+                        )
+                      ) {
+                        setSelectedCategory("OTHER");
+                      }
+                    }}
                     defaultValue={field.value}
                   >
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue placeholder="Select a verified email to display" />
+                        <SelectValue placeholder="Selecione o tipo..." />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
@@ -195,8 +255,11 @@ const UpsertTransactionDialog = ({
                 <FormItem>
                   <FormLabel>Categoria</FormLabel>
                   <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
+                    onValueChange={(value: TransactionCategory) => {
+                      field.onChange(value);
+                      setSelectedCategory(value);
+                    }}
+                    value={selectedCategory}
                   >
                     <FormControl>
                       <SelectTrigger>
@@ -204,7 +267,7 @@ const UpsertTransactionDialog = ({
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      {TRANSACTION_CATEGORY_OPTIONS.map((option) => (
+                      {categoryItens.map((option) => (
                         <SelectItem key={option.value} value={option.value}>
                           {option.label}
                         </SelectItem>
@@ -255,7 +318,22 @@ const UpsertTransactionDialog = ({
             />
             <DialogFooter>
               <DialogClose asChild>
-                <Button type="button" variant="outline">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() =>
+                    form.reset(
+                      defaultValues ?? {
+                        amount: 0,
+                        category: TransactionCategory.OTHER,
+                        date: new Date(),
+                        name: "",
+                        paymentMethod: TransactionPaymentMethod.CASH,
+                        type: TransactionType.EXPENSE,
+                      },
+                    )
+                  }
+                >
                   Cancelar
                 </Button>
               </DialogClose>
