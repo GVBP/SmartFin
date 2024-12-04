@@ -99,16 +99,7 @@ const UpsertTransactionDialog = ({
     try {
       await upsertTransaction({ ...data, id: transactionId });
       setIsOpen(false);
-      form.reset(
-        defaultValues ?? {
-          amount: 0,
-          category: TransactionCategory.OTHER,
-          date: new Date(),
-          name: "",
-          paymentMethod: TransactionPaymentMethod.CASH,
-          type: TransactionType.EXPENSE,
-        },
-      );
+      form.reset(data);
     } catch (error) {
       console.error(error);
     }
